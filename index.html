@@ -11,8 +11,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <!-- PapaParse untuk membaca file CSV dari GitHub secara async -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   
   <style>
     .parallax-1 {
@@ -55,7 +53,7 @@
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2 text-amber-400 font-bold text-sm">
           <i class="fa-solid fa-sliders text-lg"></i>
-          <span>ADMIN PANEL - EDITING &amp; REALTIME CONTROL</span>
+          <span>ADMIN PANEL - EDITING & REALTIME CONTROL</span>
         </div>
         <div class="flex items-center gap-2">
           <span class="inline-flex items-center px-2 py-1 rounded text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
@@ -71,7 +69,7 @@
         <div class="bg-slate-800 p-2 rounded border border-slate-700 flex flex-col gap-1">
           <span class="text-amber-400 font-bold">Pengaturan Teks Utama</span>
           <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="editHeaderTitle" oninput="syncFrontEndText()" placeholder="Judul Situs" type="text" value="SATU AURA">
-          <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="editHeaderSub" oninput="syncFrontEndText()" placeholder="Sub Judul" type="text" value="Accreditation Update &amp; Risk Alert UIN Sayyid Ali Rahmatullah Tulungagung">
+          <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="editHeaderSub" oninput="syncFrontEndText()" placeholder="Sub Judul" type="text" value="Accreditation Update & Risk Alert UIN Sayyid Ali Rahmatullah Tulungagung">
           <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="editMarqueeText" oninput="syncFrontEndText()" placeholder="Marquee Banner" type="text" value="LPM UIN SATU TULUNGAGUNG - ISO 9001:2015 CERTIFIED - SATKER BLU KEMENAG">
         </div>
 
@@ -79,14 +77,14 @@
           <span class="text-amber-400 font-bold">Edit Slide 1</span>
           <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide1Tag" oninput="updateSlideshowContent()" placeholder="Tag Slide 1" type="text" value="LPM UIN SATU">
           <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide1Title" oninput="updateSlideshowContent()" placeholder="Judul Slide 1" type="text" value="Penjaminan Mutu Berkelanjutan">
-          <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide1Img" onchange="updateSlideshowContent()" placeholder="URL Gambar Slide 1" type="text" value="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+          <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide1Img" onchange="updateSlideshowContent()" placeholder="URL Gambar Slide 1" type="text" value="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80">
         </div>
 
         <div class="bg-slate-800 p-2 rounded border border-slate-700 flex flex-col gap-1">
           <span class="text-amber-400 font-bold">Edit Slide 2</span>
           <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide2Tag" oninput="updateSlideshowContent()" placeholder="Tag Slide 2" type="text" value="Accreditation Update">
-          <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide2Title" oninput="updateSlideshowContent()" placeholder="Judul Slide 2" type="text" value="Monitoring &amp; Management Alert">
-          <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide2Img" onchange="updateSlideshowContent()" placeholder="URL Gambar Slide 2" type="text" value="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+          <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide2Title" oninput="updateSlideshowContent()" placeholder="Judul Slide 2" type="text" value="Monitoring & Management Alert">
+          <input class="bg-slate-900 text-white px-2 py-1 rounded border border-slate-600" id="slide2Img" onchange="updateSlideshowContent()" placeholder="URL Gambar Slide 2" type="text" value="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80">
         </div>
       </div>
     </div>
@@ -98,7 +96,7 @@
         <img alt="UIN SATU" class="h-12 w-auto bg-white rounded-full p-1" src="https://uinsatu.ac.id/wp-content/uploads/2024/04/logo_uin_satu_standard_resmi_sesuai_statuta_upload_lambang.png">
         <div>
           <h1 class="text-xl font-bold tracking-wide" id="siteTitle">SATU AURA</h1>
-          <p class="text-xs text-emerald-200" id="siteSub">Accreditation Update &amp; Risk Alert UIN Sayyid Ali Rahmatullah Tulungagung</p>
+          <p class="text-xs text-emerald-200" id="siteSub">Accreditation Update & Risk Alert UIN Sayyid Ali Rahmatullah Tulungagung</p>
         </div>
       </div>
       
@@ -122,7 +120,7 @@
   <div id="capture-area">
     <section class="relative bg-slate-900 text-white overflow-hidden" id="hero">
       <div class="relative h-[380px] w-full" id="slideshow">
-        <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000 bg-cover bg-center" id="slideBg1" style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('https://uinsatu.ac.id/wp-content/uploads/2024/01/12-3-min-scaled-2.jpg?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');">
+        <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000 bg-cover bg-center" id="slideBg1" style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('https://uinsatu.ac.id/wp-content/uploads/2024/01/12-3-min-scaled-2.jpg?auto=format&fit=crop&w=1200&q=80');">
           <div class="container mx-auto h-full flex items-center px-8">
             <div class="max-w-xl">
               <span class="bg-emerald-600 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider" id="displaySlide1Tag">LPM UIN SATU</span>
@@ -131,11 +129,11 @@
             </div>
           </div>
         </div>
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" id="slideBg2" style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('https://uinsatu.ac.id/wp-content/uploads/2024/03/am-dan-sahri_1Mb-1-scaled-e1709787739829.jpg?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');">
+        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" id="slideBg2" style="background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('https://uinsatu.ac.id/wp-content/uploads/2024/03/am-dan-sahri_1Mb-1-scaled-e1709787739829.jpg?auto=format&fit=crop&w=1200&q=80');">
           <div class="container mx-auto h-full flex items-center px-8">
             <div class="max-w-xl">
               <span class="bg-amber-600 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider" id="displaySlide2Tag">Accreditation Update</span>
-              <h2 class="text-3xl md:text-4xl font-extrabold mt-3" id="displaySlide2Title">Monitoring &amp; Management Alert</h2>
+              <h2 class="text-3xl md:text-4xl font-extrabold mt-3" id="displaySlide2Title">Monitoring & Management Alert</h2>
               <p class="mt-2 text-slate-300 text-sm">Peringatan Dini Re-Akreditasi dan Pengawasan Komposisi Peringkat Unggul secara Real-time.</p>
             </div>
           </div>
@@ -218,7 +216,7 @@
     </div>
 
     <section class="py-10 container mx-auto px-4" id="visualisasi">
-      <h2 class="text-2xl font-bold mb-6 text-slate-800 border-l-4 border-emerald-600 pl-3">2. Proporsi Peringkat &amp; Komposisi Jenjang Studi</h2>
+      <h2 class="text-2xl font-bold mb-6 text-slate-800 border-l-4 border-emerald-600 pl-3">2. Proporsi Peringkat & Komposisi Jenjang Studi</h2>
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div class="lg:col-span-5 bg-white p-6 rounded-xl shadow-md border border-slate-100">
@@ -238,7 +236,7 @@
     </section>
 
     <section class="py-10 container mx-auto px-4" id="sebaran">
-      <h2 class="text-2xl font-bold mb-6 text-slate-800 border-l-4 border-emerald-600 pl-3">3. Sebaran Lembaga, Scatter Plot &amp; Network Graph Analysis</h2>
+      <h2 class="text-2xl font-bold mb-6 text-slate-800 border-l-4 border-emerald-600 pl-3">3. Sebaran Lembaga, Scatter Plot & Network Graph Analysis</h2>
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
         <div class="lg:col-span-5 bg-white p-6 rounded-xl shadow-md border border-slate-100">
@@ -266,7 +264,7 @@
         </div>
 
         <div class="lg:col-span-6 bg-white p-6 rounded-xl shadow-md border border-slate-100">
-          <h3 class="font-bold text-slate-700 mb-2 text-center">Network Graph Analysis (Relasi Lembaga &amp; Peringkat)</h3>
+          <h3 class="font-bold text-slate-700 mb-2 text-center">Network Graph Analysis (Relasi Lembaga & Peringkat)</h3>
           <p class="text-xs text-slate-500 text-center mb-4">Pemetaan Jaringan Interaktif Keterkaitan Lembaga, Peringkat, dan Program Studi</p>
           <div class="w-full h-72 border border-slate-100 rounded-lg bg-slate-50" id="networkGraphContainer"></div>
         </div>
@@ -286,248 +284,193 @@
     <section class="py-10 container mx-auto px-4" id="tabel-data">
       <h2 class="text-2xl font-bold mb-4 text-slate-800 border-l-4 border-emerald-600 pl-3">4. Alert System Data Program Studi</h2>
       
-      <div class="bg-white p-4 rounded-xl shadow-md mb-6 border border-slate-100 flex flex-wrap gap-4 items-center justify-between">
+      <div class="bg-white p-4 rounded-xl shadow-md border border-slate-100 mb-4 flex flex-wrap gap-4 items-center justify-between">
         <div class="flex flex-wrap gap-3 items-center w-full md:w-auto">
-          <input class="px-4 py-2 border rounded-lg text-sm w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="searchInput" oninput="filterTable()" placeholder="Cari Program Studi / No SK..." type="text">
+          <input class="border border-slate-300 rounded-lg px-3 py-2 text-sm w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-emerald-500" id="searchInput" onkeyup="filterTable()" placeholder="Cari nama prodi..." type="text">
           
-          <select class="px-3 py-2 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500" id="filterStatus" onchange="filterTable()">
-            <option value="">Semua Status Alert</option>
-            <option value="Kritis">Kritis (&lt; 12 Bln)</option>
-            <option value="Waspada">Waspada (&lt; 24 Bln)</option>
-            <option value="Aman">Aman</option>
-            <option value="Baru">Belum ada data / Baru</option>
-          </select>
-
-          <select class="px-3 py-2 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500" id="filterLembaga" onchange="filterTable()">
-            <option value="">Semua Lembaga</option>
-            <option value="BAN-PT">BAN-PT</option>
-            <option value="LAMDIK">LAMDIK</option>
-            <option value="LAMEMBA">LAMEMBA</option>
-          </select>
-        </div>
-
-        <div class="flex items-center space-x-2">
-          <button class="bg-slate-700 hover:bg-slate-800 text-white text-xs px-3 py-2 rounded-lg font-bold transition flex items-center gap-1" onclick="downloadCSV()">
-            <i class="fa-solid fa-file-csv"></i> Unduh CSV
-          </button>
-          <button class="bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-2 rounded-lg font-bold transition flex items-center gap-1" onclick="downloadPDF()">
-            <i class="fa-solid fa-file-pdf"></i> Unduh Visualisasi (PDF)
-          </button>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-100">
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs border-collapse" id="dataTable">
-            <thead class="bg-slate-800 text-white uppercase font-semibold">
-              <tr>
-                <th class="p-3 cursor-pointer" onclick="sortTable(0)">No <i class="fa-solid fa-sort text-slate-400"></i></th>
-                <th class="p-3">Perguruan Tinggi</th>
-                <th class="p-3 cursor-pointer" onclick="sortTable(2)">Program Studi <i class="fa-solid fa-sort text-slate-400"></i></th>
-                <th class="p-3">Strata</th>
-                <th class="p-3">Wilayah</th>
-                <th class="p-3">No. SK</th>
-                <th class="p-3">Lembaga Akreditasi</th>
-                <th class="p-3">Peringkat</th>
-                <th class="p-3 cursor-pointer" onclick="sortTable(8)">Tanggal Kedaluwarsa <i class="fa-solid fa-sort text-slate-400"></i></th>
-                <th class="p-3">Status Kedaluwarsa</th>
-                <th class="p-3 text-center admin-col hidden">Aksi</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100" id="tableBody">
-              <tr><td class="text-center py-6 text-slate-500" colspan="11">Memuat data dari GitHub...</td></tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <div class="p-4 bg-slate-50 border-t flex justify-between items-center text-xs text-slate-500">
-          <span id="tableInfo">Menampilkan 0 dari 0 data</span>
-          <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-lg transition" id="btnLoadMore" onclick="loadMoreRows()">
-            Load More
-          </button>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-50 flex items-center justify-center" id="modalLogin">
-    <div class="bg-white p-6 rounded-2xl shadow-2xl w-full max-w-md relative">
-      <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-600" onclick="toggleAdminModal()"><i class="fa-solid fa-xmark text-lg"></i></button>
-      <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-user-shield text-emerald-600"></i> Autentikasi Admin LPM
-      </h3>
-      <form class="space-y-4" onsubmit="handleLogin(event)">
-        <div>
-          <label class="block text-xs font-bold text-slate-600 mb-1">Username</label>
-          <input class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none" id="loginUser" required type="text">
-        </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-600 mb-1">Password</label>
-          <input class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none" id="loginPass" required type="password">
-        </div>
-        <button class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-lg text-sm shadow transition" id="btnLoginSubmit" type="submit">
-          Login ke Dashboard Admin
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-50 flex items-center justify-center" id="modalEdit">
-    <div class="bg-white p-6 rounded-2xl shadow-2xl w-full max-w-xl relative max-h-[90vh] overflow-y-auto">
-      <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-600" onclick="closeEditModal()"><i class="fa-solid fa-xmark text-lg"></i></button>
-      <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2" id="editModalTitle">
-        <i class="fa-solid fa-pen-to-square text-amber-500"></i> Edit Data Program Studi
-      </h3>
-      <form class="grid grid-cols-2 gap-3 text-xs" onsubmit="saveProdiEdit(event)">
-        <input id="editNomor" type="hidden">
-        <div class="col-span-2">
-          <label class="font-bold text-slate-600">Perguruan Tinggi</label>
-          <input class="w-full p-2 border rounded bg-slate-100" id="editPT" type="text" value="UIN Sayyid Ali Rahmatullah Tulungagung">
-        </div>
-        
-        <div class="col-span-2">
-          <label class="font-bold text-slate-600">Program Studi</label>
-          <input class="w-full p-2 border rounded focus:ring-2 focus:ring-emerald-500 outline-none" id="editProdi" required type="text">
-        </div>
-        <div>
-          <label class="font-bold text-slate-600">Strata</label>
-          <select class="w-full p-2 border rounded bg-white" id="editStrata">
+          <select class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" id="filterStrata" onchange="filterTable()">
+            <option value="">Semua Strata</option>
             <option value="S1">S1</option>
             <option value="S2">S2</option>
             <option value="S3">S3</option>
             <option value="Profesi">Profesi</option>
           </select>
-        </div>
-        <div>
-          <label class="font-bold text-slate-600">Wilayah</label>
-          <input class="w-full p-2 border rounded" id="editWilayah" required type="text">
-        </div>
-        <div>
-          <label class="font-bold text-slate-600">No. SK</label>
-          <input class="w-full p-2 border rounded" id="editNoSK" required type="text">
-        </div>
-        <div>
-          <label class="font-bold text-slate-600">Lembaga Akreditasi</label>
-          <select class="w-full p-2 border rounded bg-white" id="editLembaga">
-            <option value="BAN-PT">BAN-PT</option>
-            <option value="LAMDIK">LAMDIK</option>
-            <option value="LAMEMBA">LAMEMBA</option>
-            <option value="-">-</option>
-          </select>
-        </div>
-        <div>
-          <label class="font-bold text-slate-600">Peringkat</label>
-          <select class="w-full p-2 border rounded bg-white" id="editPeringkat">
+
+          <select class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" id="filterPeringkat" onchange="filterTable()">
+            <option value="">Semua Peringkat</option>
             <option value="Unggul">Unggul</option>
             <option value="Baik Sekali">Baik Sekali</option>
             <option value="Baik">Baik</option>
-            <option value="-">-</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+
+          <select class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" id="filterLembaga" onchange="filterTable()">
+            <option value="">Semua Lembaga</option>
+            <option value="BAN-PT">BAN-PT</option>
+            <option value="LAMDIK">LAMDIK</option>
+            <option value="LAMEMBA">LAMEMBA</option>
+            <option value="LAM-PTKes">LAM-PTKes</option>
           </select>
         </div>
-        <div>
-          <label class="font-bold text-slate-600">Tanggal Kedaluwarsa</label>
-          <input class="w-full p-2 border rounded" id="editTanggal" type="date">
+
+        <div class="flex items-center gap-2">
+          <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-4 py-2 rounded-lg text-sm shadow transition flex items-center gap-2" onclick="downloadCSV()">
+            <i class="fa-solid fa-file-csv"></i> Export CSV
+          </button>
+          <button class="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-lg text-sm shadow transition flex items-center gap-2" onclick="downloadPDF()">
+            <i class="fa-solid fa-file-pdf"></i> Export PDF
+          </button>
         </div>
-        <div class="col-span-2">
-          <label class="font-bold text-slate-600">Status Kedaluwarsa</label>
-          <select class="w-full p-2 border rounded bg-white" id="editStatus">
-            <option value="Masih berlaku">Masih berlaku</option>
-            <option value="Belum ada data BAN-PT / Prodi Baru">Belum ada data BAN-PT / Prodi Baru</option>
-          </select>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="p-3">No</th>
+                <th class="p-3">Program Studi</th>
+                <th class="p-3">Strata</th>
+                <th class="p-3">No. SK</th>
+                <th class="p-3">Lembaga</th>
+                <th class="p-3">Peringkat</th>
+                <th class="p-3">Kedaluwarsa</th>
+                <th class="p-3">Sisa Waktu</th>
+                <th class="p-3 text-center" id="actionHeader">Aksi</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100" id="tableBody">
+              <tr>
+                <td class="p-4 text-center text-slate-500" colspan="9">Memuat data...</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="col-span-2 mt-4 flex justify-end gap-2">
-          <button class="px-4 py-2 bg-slate-200 rounded text-slate-700 font-bold" onclick="closeEditModal()" type="button">Batal</button>
-          <button class="px-4 py-2 bg-emerald-600 text-white rounded font-bold hover:bg-emerald-700 shadow" id="btnSaveEdit" type="submit">Simpan Perubahan</button>
-        </div>
-      </form>
-    </div>
+      </div>
+    </section>
   </div>
 
   <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
-    <div class="container mx-auto px-4">
-      <div class="overflow-hidden mb-8 py-3 bg-slate-800/50 rounded-xl border border-slate-700/50">
-        <div class="animate-marquee flex items-center space-x-12">
-          <span class="font-semibold text-xs tracking-widest text-slate-400">PARTNER &amp; MITRA AKREDITASI:</span>
-          <img alt="Kemenag" class="h-8 grayscale hover:grayscale-0 transition" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_Kementerian_Agama_RI_vector.sky.png/500px-Logo_Kementerian_Agama_RI_vector.sky.png">
-          <img alt="UIN SATU" class="h-8 grayscale hover:grayscale-0 transition" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Logo_UIN_Sayyid_Ali_Rahmatullah_Tulungagung.png/600px-Logo_UIN_Sayyid_Ali_Rahmatullah_Tulungagung.png">
-          <span class="font-bold text-xs text-emerald-400" id="marqueeTextDisplay">LPM UIN SATU TULUNGAGUNG - ISO 9001:2015 CERTIFIED - SATKER BLU KEMENAG</span>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
-        <div class="flex space-x-4">
-          <a class="hover:text-white" href="#hero">Beranda</a>
-          <a class="hover:text-white" href="#risk-alert">Risk Alert</a>
-          <a class="hover:text-white" href="#tabel-data">Data Prodi</a>
-        </div>
-        <p class="text-center font-medium">Made by Kepala Pusat Akreditasi dan Sertifikasi UIN Sayyid Ali Rahmatullah Tulungagung © 2026</p>
-      </div>
+    <div class="container mx-auto px-4 text-center text-sm">
+      <p class="mb-2">© 2026 Lembaga Penjaminan Mutu (LPM) UIN Sayyid Ali Rahmatullah Tulungagung.</p>
+      <p class="text-xs text-slate-500">Sistem Informasi Akreditasi &amp; Peringatan Dini Re-Akreditasi (SATU AURA)</p>
     </div>
   </footer>
 
   <script>
-    // Ganti tautan ini dengan URL raw data.csv di repository GitHub Anda
-    const GITHUB_CSV_URL = "https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/data.csv";
+    // DATASET CSV TERTANAM BERBARIS KE BAWAH (FALLBACK JIKA GITHUB GAGAL / PRIVAT)
+    const fallbackCsvData = `Perguruan Tinggi,Program Studi,Strata,Wilayah,No. SK,Lembaga Akreditasi,Peringkat,Tanggal Kedaluwarsa,Status Kedaluwarsa
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Islam Anak Usia Dini,S1,PTAN,804/SK/LAMDIK/Ak/S/XII/2022,LAMDIK,Unggul,2027-12-19,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Manajemen Zakat Dan Wakaf,S1,PTAN,457/DE/A.5/AR.10/VI/2023,LAMEMBA,Baik Sekali,2028-06-12,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Studi Islam,S2,PTAN,2918/SK/BAN-PT/Ak/M/VII/2023,BAN-PT,Baik Sekali,2028-07-25,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Bahasa Inggris,S2,PTAN,876/SK/LAMDIK/Ak/M/IX/2023,LAMDIK,Baik Sekali,2028-09-05,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Biologi,S1,PTAN,961/SK/LAMDIK/Ak/S/IX/2023,LAMDIK,Baik Sekali,2028-09-26,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Matematika,S1,PTAN,879/SK/LAMDIK/Ak/S/IX/2023,LAMDIK,Unggul,2028-10-09,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Akuntansi Syariah,S1,PTAN,941/DE/A.5/AR.10/I/2024,LAMEMBA,Baik Sekali,2029-01-05,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Bahasa Arab,S1,PTAN,439/SK/LAMDIK/Ak/S/IV/2024,LAMDIK,Unggul,2029-03-05,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Manajemen Pendidikan Islam,S3,PTAN,130/SK/LAMDIK/Ak/D/II/2024,LAMDIK,Unggul,2029-03-12,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Agama Islam,S1,PTAN,453/SK/LAMDIK/Ak/S/IV/2024,LAMDIK,Unggul,2029-03-19,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Matematika,S2,PTAN,853/SK/LAMDIK/Ak/M/VII/2024,LAMDIK,Baik Sekali,2029-04-02,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Bahasa Indonesia,S1,PTAN,547/SK/LAMDIK/Ak/S/V/2024,LAMDIK,Unggul,2029-04-16,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Ilmu Pengetahuan Sosial,S1,PTAN,728/SK/LAMDIK/Ak/S/VI/2024,LAMDIK,Unggul,2029-05-07,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Guru Madrasah Ibtidaiyah,S1,PTAN,557/SK/LAMDIK/Ak/S/V/2024,LAMDIK,Unggul,2029-05-16,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Manajemen Pendidikan Islam,S1,PTAN,859/SK/LAMDIK/Ak/S/VII/2024,LAMDIK,Unggul,2029-07-02,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Ekonomi Syariah,S2,PTAN,1361/DE/A.5/AR.10/VII/2024,LAMEMBA,Baik Sekali,2029-07-12,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Bahasa Inggris,S1,PTAN,1839/SK/LAMDIK/Ak/S/XII/2024,LAMDIK,Unggul,2029-08-06,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Sosiologi Agama,S1,PTAN,7001/SK/BAN-PT/Ak/S/XII/2024,BAN-PT,Unggul,2029-12-11,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Ilmu Hadis,S1,PTAN,7109/SK/BAN-PT/Ak/S/XII/2024,BAN-PT,Unggul,2029-12-15,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Profesi Guru,Profesi,PTAN,180/SK/LAMDIK/Ak/P/II/2025,LAMDIK,Baik Sekali,2029-12-26,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Agama Islam,S2,PTAN,2139/SK/LAMDIK/Ak/M/XII/2024,LAMDIK,Unggul,2029-12-26,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Manajemen Pendidikan Islam,S2,PTAN,119/SK/LAMDIK/Ak/M/II/2025,LAMDIK,Unggul,2030-02-11,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Bahasa Arab,S2,PTAN,114/SK/LAMDIK/Ak/M/II/2025,LAMDIK,Unggul,2030-02-11,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Manajemen Bisnis Syariah,S1,PTAN,2030/DE/A.5/AR.10/II/2025,LAMEMBA,Unggul,2030-02-14,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Ekonomi Syariah,S3,PTAN,624/DE/A.5/AR.11/III/2025,LAMEMBA,Baik,2030-03-04,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Kimia,S1,PTAN,291/SK/LAMDIK/Ak/S/III/2025,LAMDIK,Unggul,2030-03-04,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Manajemen Keuangan Syariah,S1,PTAN,2090/DE/A.5/AR.10/III/2025,LAMEMBA,Unggul,2030-03-07,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Ekonomi Syariah,S1,PTAN,2140/DE/A.5/AR.10/III/2025,LAMEMBA,Unggul,2030-03-14,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Islam Anak Usia Dini,S2,PTAN,567/SK/LAMDIK/Ak/M/V/2025,LAMDIK,Baik Sekali,2030-04-03,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Hukum Ekonomi Syariah (Muamalah),S1,PTAN,2374/SK/BAN-PT/Ak/S/V/2025,BAN-PT,Unggul,2030-05-14,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tadris Fisika,S1,PTAN,670/SK/LAMDIK/Ak/S/VI/2025,LAMDIK,Baik Sekali,2030-05-27,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Hukum Keluarga Islam (Ahwal Syakhshiyyah),S1,PTAN,2728/SK/BAN-PT/Ak/S/VI/2025,BAN-PT,Unggul,2030-06-04,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Guru Madrasah Ibtidaiyah,S2,PTAN,773/SK/LAMDIK/Ak/M/VI/2025,LAMDIK,Baik Sekali,2030-06-18,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Hukum Tata Negara (Siyasah Syar'iyyah),S1,PTAN,3302/SK/BAN-PT/Ak/S/VII/2025,BAN-PT,Unggul,2030-07-02,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Aqidah Dan Filsafat Islam,S1,PTAN,3499/SK/BAN-PT/Ak/S/VII/2025,BAN-PT,Unggul,2030-07-09,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Bahasa Dan Sastra Arab,S1,PTAN,3826/SK/BAN-PT/Ak/S/VII/2025,BAN-PT,Unggul,2030-07-23,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Komunikasi Dan Penyiaran Islam,S1,PTAN,4284/SK/BAN-PT/Ak/S/VIII/2025,BAN-PT,Unggul,2030-08-13,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pendidikan Agama Islam,S3,PTAN,1087/SK/LAMDIK/Ak/D/X/2025,LAMDIK,Unggul,2030-09-02,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Psikologi Islam,S1,PTAN,4789/SK/BAN-PT/Ak/S/IX/2025,BAN-PT,Baik Sekali,2030-09-03,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Hukum Ekonomi Syariah,S2,PTAN,5313/SK/BAN-PT/Ak/M/X/2025,BAN-PT,Unggul,2030-10-01,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Sejarah Peradaban Islam,S1,PTAN,5762/SK/BAN-PT/Ak/S/X/2025,BAN-PT,Unggul,2030-10-22,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pengembangan Masyarakat Islam,S1,PTAN,5994/SK/BAN-PT/Ak/S/X/2025,BAN-PT,Baik Sekali,2030-10-29,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Ilmu Al-Qur`an Dan Tafsir,S1,PTAN,6512/SK/BAN-PT/Ak/S/XI/2025,BAN-PT,Unggul,2030-11-19,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Perbankan Syariah,S1,PTAN,6657/SK/BAN-PT/Ak/S/XI/2025,BAN-PT,Unggul,2030-11-26,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Manajemen Operasional Syariah,S1,PTAN,112/SK/BAN-PT/Ak/S/I/2026,BAN-PT,Unggul,2031-01-13,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Ilmu Al-Qur`an Dan Tafsir,S2,PTAN,317/SK/BAN-PT/Ak/M/III/2026,BAN-PT,Unggul,2031-03-03,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Manajemen Dakwah,S1,PTAN,420/SK/BAN-PT/Ak/S/III/2026,BAN-PT,Unggul,2031-03-10,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Tasawuf Psikoterapi,S1,PTAN,6262/SK/BAN-PT/Ak/S/III/2026,BAN-PT,Unggul,2031-03-31,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Hukum Keluarga Islam,S2,PTAN,6488/SK/BAN-PT/Ak/M/V/2026,BAN-PT,Unggul,2031-05-05,Masih berlaku
+Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung,Pariwisata Syariah,S1,PTAN,6744/SK/BAN-PT/Ak/S/VI/2026,BAN-PT,Baik Sekali,2031-06-09,Masih berlaku`;
 
     let rawDataset = [];
-    let filteredDataset = [];
-    let visibleRows = 10;
-    let isAdminLoggedIn = false;
-    let chartInstances = {};
-    let networkGraphInstance = null;
+    let isAdmin = false;
+    let chartDonut, chartStackedBar, chartPieLembaga, chartComboProyeksi, chartScatter;
+    let networkGraphObj = null;
 
-    document.addEventListener("DOMContentLoaded", () => {
-      initSlideshow();
-      fetchDataFromGitHub();
-    });
+    // Fungsi fetch data dengan penanganan failover otomatis
+    async function loadDataFromSource() {
+      // URL Raw GitHub (Ganti sesuai URL repository Anda jika ada)
+      const githubRawUrl = 'https://raw.githubusercontent.com/user/repo/main/data.csv';
 
-    function fetchDataFromGitHub() {
-      Papa.parse(GITHUB_CSV_URL, {
-        download: true,
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          if (results.data && results.data.length > 0) {
-            rawDataset = results.data;
-            filteredDataset = [...rawDataset];
-            refreshDashboard();
-          } else {
-            showError("Data CSV kosong atau tidak dapat dibaca.");
-          }
-        },
-        error: function(err) {
-          console.error("Error fetching CSV from GitHub:", err);
-          showError("Gagal mengambil data.csv dari GitHub. Pastikan URL raw GitHub sudah benar dan file dapat diakses public.");
+      try {
+        const response = await fetch(githubRawUrl);
+        if (!response.ok) {
+          throw new Error('Gagal mengambil data.csv dari GitHub. Pastikan URL raw GitHub sudah benar dan file dapat diakses public.');
         }
-      });
+        const csvText = await response.text();
+        parseCSV(csvText);
+      } catch (err) {
+        console.warn(err.message + ' Menggunakan dataset internal.');
+        parseCSV(fallbackCsvData);
+      }
     }
 
-    function showError(message) {
-      document.getElementById("tableBody").innerHTML = `
-        <tr>
-          <td colspan="11" class="text-center py-6 text-red-500 font-bold">
-            <i class="fa-solid fa-triangle-exclamation mr-2"></i> ${message}
-          </td>
-        </tr>`;
+    function parseCSV(csvText) {
+      const lines = csvText.trim().split("\n");
+      if (lines.length < 2) return;
+      
+      const headers = lines[0].split(",").map(h => h.trim());
+      rawDataset = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        const currentline = lines[i].split(",");
+        const obj = {};
+        for (let j = 0; j < headers.length; j++) {
+          obj[headers[j]] = currentline[j] ? currentline[j].trim() : "";
+        }
+        rawDataset.push(obj);
+      }
+      initDashboard();
     }
 
-    function refreshDashboard() {
-      renderRiskAlerts();
+    function calculateMonthDiff(expiryDateStr) {
+      if (!expiryDateStr) return 999;
+      const expDate = new Date(expiryDateStr);
+      const today = new Date();
+      return (expDate.getFullYear() - today.getFullYear()) * 12 + (expDate.getMonth() - today.getMonth());
+    }
+
+    function initDashboard() {
       renderNumericStats();
-      filterTable();
-    }
-
-    function initSlideshow() {
-      const slides = document.querySelectorAll('#slideshow .slide');
-      if (!slides.length) return;
-      let currentSlide = 0;
-
-      setInterval(() => {
-        slides[currentSlide].classList.remove('opacity-100');
-        slides[currentSlide].classList.add('opacity-0');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.remove('opacity-0');
-        slides[currentSlide].classList.add('opacity-100');
-      }, 5000);
+      renderRiskAlerts();
+      renderTable();
+      renderDonutChart();
+      renderStackedBarChart();
+      renderPieLembagaChart();
+      renderComboProyeksiChart();
+      renderScatterPlotChart();
+      renderNetworkGraph();
     }
 
     function renderNumericStats() {
@@ -543,106 +486,366 @@
 
       const pctUnggul = totalProdi > 0 ? ((countUnggul / totalProdi) * 100).toFixed(1) : 0;
 
-      animateCounter("stat-total-prodi", totalProdi);
-      animateCounter("stat-unggul", countUnggul);
-      animateCounter("stat-baik-sekali", countBaikSekali);
-      animateCounter("stat-persen-unggul", pctUnggul);
-    }
-
-    function animateCounter(elementId, targetValue) {
-      const el = document.getElementById(elementId);
-      if (!el) return;
-      el.innerText = targetValue;
+      document.getElementById("stat-total-prodi").innerText = totalProdi;
+      document.getElementById("stat-unggul").innerText = countUnggul;
+      document.getElementById("stat-baik-sekali").innerText = countBaikSekali;
+      document.getElementById("stat-persen-unggul").innerText = pctUnggul;
     }
 
     function renderRiskAlerts() {
-      const now = new Date();
-      let kritisList = [];
-      let waspadaList = [];
+      const listKritis = document.getElementById("list-kritis");
+      const listWaspada = document.getElementById("list-waspada");
+      listKritis.innerHTML = "";
+      listWaspada.innerHTML = "";
 
-      rawDataset.forEach(item => {
-        if (!item["Tanggal Kedaluwarsa"]) return;
-        const expDate = new Date(item["Tanggal Kedaluwarsa"]);
-        if (isNaN(expDate)) return;
+      let countKritis = 0;
+      let countWaspada = 0;
 
-        const diffMonths = (expDate.getFullYear() - now.getFullYear()) * 12 + (expDate.getMonth() - now.getMonth());
-
-        if (diffMonths <= 12) {
-          kritisList.push(`${item["Program Studi"]} (${item["Strata"]}) - Exp: ${item["Tanggal Kedaluwarsa"]}`);
-        } else if (diffMonths <= 24) {
-          waspadaList.push(`${item["Program Studi"]} (${item["Strata"]}) - Exp: ${item["Tanggal Kedaluwarsa"]}`);
+      rawDataset.forEach(d => {
+        const diff = calculateMonthDiff(d["Tanggal Kedaluwarsa"]);
+        if (diff < 12) {
+          countKritis++;
+          listKritis.innerHTML += `<li class="flex justify-between border-b border-red-200 pb-1">
+            <span><strong>${d["Program Studi"]} (${d["Strata"]})</strong></span>
+            <span class="font-semibold text-red-700">${d["Tanggal Kedaluwarsa"]} (${diff < 0 ? 'Kedaluwarsa' : diff + ' bln'})</span>
+          </li>`;
+        } else if (diff >= 12 && diff <= 24) {
+          countWaspada++;
+          listWaspada.innerHTML += `<li class="flex justify-between border-b border-amber-200 pb-1">
+            <span><strong>${d["Program Studi"]} (${d["Strata"]})</strong></span>
+            <span class="font-semibold text-amber-700">${d["Tanggal Kedaluwarsa"]} (${diff} bln)</span>
+          </li>`;
         }
       });
 
-      document.getElementById("badge-kritis-count").innerText = `${kritisList.length} Prodi`;
-      document.getElementById("badge-waspada-count").innerText = `${waspadaList.length} Prodi`;
+      if (countKritis === 0) listKritis.innerHTML = '<li class="text-slate-500 italic">Tidak ada prodi status kritis.</li>';
+      if (countWaspada === 0) listWaspada.innerHTML = '<li class="text-slate-500 italic">Tidak ada prodi status waspada.</li>';
 
-      document.getElementById("list-kritis").innerHTML = kritisList.length 
-        ? kritisList.map(i => `<li>• ${i}</li>`).join("") 
-        : "<li class='text-slate-500'>Tidak ada prodi status kritis.</li>";
-
-      document.getElementById("list-waspada").innerHTML = waspadaList.length 
-        ? waspadaList.map(i => `<li>• ${i}</li>`).join("") 
-        : "<li class='text-slate-500'>Tidak ada prodi status waspada.</li>";
-    }
-
-    function filterTable() {
-      const search = document.getElementById("searchInput").value.toLowerCase();
-      const filterStatus = document.getElementById("filterStatus").value;
-      const filterLembaga = document.getElementById("filterLembaga").value;
-
-      filteredDataset = rawDataset.filter(d => {
-        const matchSearch = !search || 
-          (d["Program Studi"] && d["Program Studi"].toLowerCase().includes(search)) ||
-          (d["No. SK"] && d["No. SK"].toLowerCase().includes(search));
-        const matchLembaga = !filterLembaga || d["Lembaga Akreditasi"] === filterLembaga;
-        return matchSearch && matchLembaga;
-      });
-
-      renderTable();
+      document.getElementById("badge-kritis-count").innerText = `${countKritis} Prodi`;
+      document.getElementById("badge-waspada-count").innerText = `${countWaspada} Prodi`;
     }
 
     function renderTable() {
       const tbody = document.getElementById("tableBody");
-      const rowsToDisplay = filteredDataset.slice(0, visibleRows);
+      tbody.innerHTML = "";
 
-      if (rowsToDisplay.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="11" class="text-center py-6 text-slate-500">Tidak ada data yang cocok.</td></tr>`;
-        document.getElementById("tableInfo").innerText = "Menampilkan 0 dari 0 data";
-        return;
+      rawDataset.forEach((d, idx) => {
+        const diff = calculateMonthDiff(d["Tanggal Kedaluwarsa"]);
+        let badgeColor = "bg-emerald-100 text-emerald-800";
+        if (diff < 12) badgeColor = "bg-red-100 text-red-800 font-bold";
+        else if (diff <= 24) badgeColor = "bg-amber-100 text-amber-800 font-bold";
+
+        const tr = document.createElement("tr");
+        tr.className = "hover:bg-slate-50 transition border-b border-slate-100";
+        tr.innerHTML = `
+          <td class="p-3 text-slate-500">${idx + 1}</td>
+          <td class="p-3 font-semibold ${isAdmin ? 'cell-editable' : ''}" ${isAdmin ? `contenteditable="true" onblur="updateRowData(${idx}, 'Program Studi', this.innerText)"` : ''}>${d["Program Studi"]}</td>
+          <td class="p-3 ${isAdmin ? 'cell-editable' : ''}" ${isAdmin ? `contenteditable="true" onblur="updateRowData(${idx}, 'Strata', this.innerText)"` : ''}>${d["Strata"]}</td>
+          <td class="p-3 text-xs text-slate-600 ${isAdmin ? 'cell-editable' : ''}" ${isAdmin ? `contenteditable="true" onblur="updateRowData(${idx}, 'No. SK', this.innerText)"` : ''}>${d["No. SK"]}</td>
+          <td class="p-3 ${isAdmin ? 'cell-editable' : ''}" ${isAdmin ? `contenteditable="true" onblur="updateRowData(${idx}, 'Lembaga Akreditasi', this.innerText)"` : ''}>${d["Lembaga Akreditasi"]}</td>
+          <td class="p-3 ${isAdmin ? 'cell-editable' : ''}" ${isAdmin ? `contenteditable="true" onblur="updateRowData(${idx}, 'Peringkat', this.innerText)"` : ''}><span class="px-2 py-1 rounded text-xs font-bold bg-slate-100 text-slate-800 border">${d["Peringkat"]}</span></td>
+          <td class="p-3 text-xs ${isAdmin ? 'cell-editable' : ''}" ${isAdmin ? `contenteditable="true" onblur="updateRowData(${idx}, 'Tanggal Kedaluwarsa', this.innerText)"` : ''}>${d["Tanggal Kedaluwarsa"]}</td>
+          <td class="p-3"><span class="px-2 py-1 rounded-full text-xs font-semibold ${badgeColor}">${diff < 0 ? 'Kedaluwarsa' : diff + ' Bulan'}</span></td>
+          <td class="p-3 text-center">
+            ${isAdmin ? `<button onclick="deleteProdi(${idx})" class="text-red-500 hover:text-red-700 transition p-1"><i class="fa-solid fa-trash"></i></button>` : `<i class="fa-solid fa-check text-emerald-500"></i>`}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterTable() {
+      const search = document.getElementById("searchInput").value.toLowerCase();
+      const strata = document.getElementById("filterStrata").value.toLowerCase();
+      const peringkat = document.getElementById("filterPeringkat").value.toLowerCase();
+      const lembaga = document.getElementById("filterLembaga").value.toLowerCase();
+
+      const rows = document.querySelectorAll("#tableBody tr");
+      rows.forEach(r => {
+        const text = r.innerText.toLowerCase();
+        const pName = r.children[1] ? r.children[1].innerText.toLowerCase() : "";
+        const pStrata = r.children[2] ? r.children[2].innerText.toLowerCase() : "";
+        const pLembaga = r.children[4] ? r.children[4].innerText.toLowerCase() : "";
+        const pPeringkat = r.children[5] ? r.children[5].innerText.toLowerCase() : "";
+
+        const matchSearch = pName.includes(search);
+        const matchStrata = !strata || pStrata === strata;
+        const matchPeringkat = !peringkat || pPeringkat.includes(peringkat);
+        const matchLembaga = !lembaga || pLembaga.includes(lembaga);
+
+        if (matchSearch && matchStrata && matchPeringkat && matchLembaga) {
+          r.style.display = "";
+        } else {
+          r.style.display = "none";
+        }
+      });
+    }
+
+    function renderDonutChart() {
+      const counts = {};
+      rawDataset.forEach(d => {
+        const p = d["Peringkat"] || "Lainnya";
+        counts[p] = (counts[p] || 0) + 1;
+      });
+
+      const ctx = document.getElementById("donutChart").getContext("2d");
+      if (chartDonut) chartDonut.destroy();
+
+      chartDonut = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: Object.keys(counts),
+          datasets: [{
+            data: Object.values(counts),
+            backgroundColor: ["#f59e0b", "#3b82f6", "#10b981", "#8b5cf6", "#64748b"]
+          }]
+        },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    }
+
+    function renderStackedBarChart() {
+      const strataList = ["S1", "S2", "S3", "Profesi"];
+      const peringkatList = ["Unggul", "Baik Sekali", "Baik"];
+
+      const dataMap = {};
+      peringkatList.forEach(p => {
+        dataMap[p] = strataList.map(s => {
+          return rawDataset.filter(d => (d["Strata"] || "").trim() === s && (d["Peringkat"] || "").trim().toLowerCase() === p.toLowerCase()).length;
+        });
+      });
+
+      const ctx = document.getElementById("stackedBarChart").getContext("2d");
+      if (chartStackedBar) chartStackedBar.destroy();
+
+      chartStackedBar = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: strataList,
+          datasets: [
+            { label: "Unggul", data: dataMap["Unggul"], backgroundColor: "#f59e0b" },
+            { label: "Baik Sekali", data: dataMap["Baik Sekali"], backgroundColor: "#3b82f6" },
+            { label: "Baik", data: dataMap["Baik"], backgroundColor: "#10b981" }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: { x: { stacked: true }, y: { stacked: true } }
+        }
+      });
+    }
+
+    function renderPieLembagaChart() {
+      const counts = {};
+      rawDataset.forEach(d => {
+        const l = d["Lembaga Akreditasi"] || "Lainnya";
+        counts[l] = (counts[l] || 0) + 1;
+      });
+
+      const ctx = document.getElementById("pieLembagaChart").getContext("2d");
+      if (chartPieLembaga) chartPieLembaga.destroy();
+
+      chartPieLembaga = new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: Object.keys(counts),
+          datasets: [{
+            data: Object.values(counts),
+            backgroundColor: ["#059669", "#d97706", "#2563eb", "#9333ea"]
+          }]
+        },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    }
+
+    function renderComboProyeksiChart() {
+      const yearMap = {};
+      rawDataset.forEach(d => {
+        if (d["Tanggal Kedaluwarsa"]) {
+          const year = d["Tanggal Kedaluwarsa"].substring(0, 4);
+          yearMap[year] = (yearMap[year] || 0) + 1;
+        }
+      });
+
+      const years = Object.keys(yearMap).sort();
+      const counts = years.map(y => yearMap[y]);
+
+      const ctx = document.getElementById("comboProyeksiChart").getContext("2d");
+      if (chartComboProyeksi) chartComboProyeksi.destroy();
+
+      chartComboProyeksi = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: years,
+          datasets: [
+            { type: "bar", label: "Jumlah Expired", data: counts, backgroundColor: "#10b981" },
+            { type: "line", label: "Tren", data: counts, borderColor: "#f59e0b", fill: false }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+    }
+
+    function renderScatterPlotChart() {
+      const strataMap = { "S1": 1, "S2": 2, "S3": 3, "Profesi": 4 };
+      const points = rawDataset.map(d => ({
+        x: calculateMonthDiff(d["Tanggal Kedaluwarsa"]),
+        y: strataMap[d["Strata"]] || 1
+      }));
+
+      const ctx = document.getElementById("scatterPlotChart").getContext("2d");
+      if (chartScatter) chartScatter.destroy();
+
+      chartScatter = new Chart(ctx, {
+        type: "scatter",
+        data: {
+          datasets: [{
+            label: "Sisa Bulan vs Strata",
+            data: points,
+            backgroundColor: "#ef4444"
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: { title: { display: true, text: "Sisa Waktu (Bulan)" } },
+            y: { title: { display: true, text: "Strata (1:S1, 2:S2, 3:S3, 4:Profesi)" } }
+          }
+        }
+      });
+    }
+
+    function renderNetworkGraph() {
+      const container = document.getElementById("networkGraphContainer");
+      container.innerHTML = "";
+
+      const nodes = [{ id: "root", label: "UIN SATU", group: "main" }];
+      const edges = [];
+
+      const meSet = new Set();
+      rawDataset.forEach(d => {
+        if (d["Lembaga Akreditasi"]) meSet.add(d["Lembaga Akreditasi"]);
+      });
+
+      meSet.forEach(l => {
+        nodes.push({ id: l, label: l, group: "lembaga" });
+        edges.push({ from: "root", to: l });
+      });
+
+      rawDataset.slice(0, 15).forEach((d, i) => {
+        const id = `p_${i}`;
+        nodes.push({ id: id, label: d["Program Studi"], group: "prodi" });
+        if (d["Lembaga Akreditasi"]) {
+          edges.push({ from: d["Lembaga Akreditasi"], to: id });
+        }
+      });
+
+      const data = { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) };
+      const options = {
+        nodes: { shape: "dot", size: 12 },
+        physics: { enabled: true }
+      };
+
+      networkGraphObj = new vis.Network(container, data, options);
+    }
+
+    function toggleAdminModal() {
+      isAdmin = !isAdmin;
+      const panel = document.getElementById("adminFloatingPanel");
+      const btnText = document.getElementById("adminBtnText");
+
+      if (isAdmin) {
+        panel.classList.remove("hidden");
+        btnText.innerText = "Keluar Admin";
+      } else {
+        panel.classList.add("hidden");
+        btnText.innerText = "Panel Admin";
       }
-
-      tbody.innerHTML = rowsToDisplay.map((row, idx) => `
-        <tr class="hover:bg-slate-50 transition">
-          <td class="p-3">${idx + 1}</td>
-          <td class="p-3">${row["Perguruan Tinggi"] || "-"}</td>
-          <td class="p-3 font-semibold text-slate-800">${row["Program Studi"] || "-"}</td>
-          <td class="p-3">${row["Strata"] || "-"}</td>
-          <td class="p-3">${row["Wilayah"] || "-"}</td>
-          <td class="p-3 text-slate-600 font-mono">${row["No. SK"] || "-"}</td>
-          <td class="p-3">${row["Lembaga Akreditasi"] || "-"}</td>
-          <td class="p-3"><span class="px-2 py-0.5 rounded text-xs font-bold ${getPeringkatBadgeClass(row["Peringkat"])}">${row["Peringkat"] || "-"}</span></td>
-          <td class="p-3 font-mono">${row["Tanggal Kedaluwarsa"] || "-"}</td>
-          <td class="p-3">${row["Status Kedaluwarsa"] || "-"}</td>
-        </tr>
-      `).join("");
-
-      document.getElementById("tableInfo").innerText = `Menampilkan ${rowsToDisplay.length} dari ${filteredDataset.length} data`;
-    }
-
-    function getPeringkatBadgeClass(peringkat) {
-      if (!peringkat) return "bg-slate-100 text-slate-600";
-      const p = peringkat.toLowerCase();
-      if (p === "unggul") return "bg-amber-100 text-amber-800 border border-amber-300";
-      if (p === "baik sekali") return "bg-blue-100 text-blue-800 border border-blue-300";
-      if (p === "baik") return "bg-emerald-100 text-emerald-800 border border-emerald-300";
-      return "bg-slate-100 text-slate-600";
-    }
-
-    function loadMoreRows() {
-      visibleRows += 10;
       renderTable();
     }
+
+    function updateRowData(idx, field, val) {
+      if (rawDataset[idx]) {
+        rawDataset[idx][field] = val.trim();
+        initDashboard();
+      }
+    }
+
+    function deleteProdi(idx) {
+      if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
+        rawDataset.splice(idx, 1);
+        initDashboard();
+      }
+    }
+
+    function syncFrontEndText() {
+      const newTitle = document.getElementById("editHeaderTitle").value;
+      const newSub = document.getElementById("editHeaderSub").value;
+
+      if(newTitle) document.getElementById("siteTitle").innerText = newTitle;
+      if(newSub) document.getElementById("siteSub").innerText = newSub;
+    }
+
+    function updateSlideshowContent() {
+      const tag1 = document.getElementById("slide1Tag").value;
+      const title1 = document.getElementById("slide1Title").value;
+      const img1 = document.getElementById("slide1Img").value;
+
+      if(tag1) document.getElementById("displaySlide1Tag").innerText = tag1;
+      if(title1) document.getElementById("displaySlide1Title").innerText = title1;
+      if(img1) document.getElementById("slideBg1").style.backgroundImage = `linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('${img1}')`;
+    }
+
+    function downloadCSV() {
+      if (rawDataset.length === 0) return alert("Data kosong!");
+      const headers = Object.keys(rawDataset[0]);
+      let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\n";
+
+      rawDataset.forEach(row => {
+        const values = headers.map(h => `"${(row[h] || '').replace(/"/g, '""')}"`);
+        csvContent += values.join(",") + "\n";
+      });
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `Data_Akreditasi_SATU_AURA_${new Date().toISOString().slice(0,10)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function downloadPDF() {
+      const element = document.getElementById("capture-area");
+      alert("Menyiapkan dokumen PDF, harap tunggu...");
+
+      html2canvas(element, { scale: 1.5, useCORS: true }).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const imgWidth = 210;
+        const pageHeight = 295;
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft >= 0) {
+          position = heightLeft - imgHeight;
+          pdf.addPage();
+          pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+        }
+        pdf.save(`Laporan_SATU_AURA_${new Date().toISOString().slice(0,10)}.pdf`);
+      });
+    }
+
+    // Panggil loader data saat aplikasi pertama kali dimuat
+    loadDataFromSource();
   </script>
 </body>
 </html>
