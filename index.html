@@ -68,7 +68,7 @@
   </style>
 
   <script type='text/javascript'>
-    // Anti-Frame Buster (Mencegah Blogspot menolak dimasukkan ke iframe WordPress)
+    // Anti-Frame Buster
     try {
       if (top !== self) {
         window.onbeforeunload = null;
@@ -98,7 +98,6 @@
         </div>
       </div>
 
-      <!-- Controls Grid -->
       <div class='grid grid-cols-1 md:grid-cols-3 gap-3 text-xs'>
         <div class='bg-slate-800 p-2 rounded border border-slate-700 flex flex-col gap-1'>
           <span class='text-amber-400 font-bold'>Pengaturan Teks Utama</span>
@@ -308,7 +307,8 @@
         <div class='lg:col-span-6 bg-white p-6 rounded-xl shadow-md border border-slate-100'>
           <h3 class='font-bold text-slate-700 mb-2 text-center'>Network Graph Analysis (Relasi Lembaga & Peringkat)</h3>
           <p class='text-xs text-slate-500 text-center mb-4'>Pemetaan Jaringan Interaktif Keterkaitan Lembaga, Peringkat, dan Program Studi</p>
-          <div class='w-full h-72 border border-slate-100 rounded-lg bg-slate-50' id='networkGraphContainer'></div>
+          <!-- Background putih -->
+          <div class='w-full h-72 border border-slate-100 rounded-lg bg-white' id='networkGraphContainer'></div>
         </div>
       </div>
     </section>
@@ -510,10 +510,10 @@
     </div>
   </footer>
 
-  <!-- SCRIPT LOGIC & REALTIME SYNC -->
+  <!-- SCRIPT LOGIC -->
   <script type='text/javascript'>
   //<![CDATA[
-    // DATASET dari DATA FINAL AKREDITASI.xlsx (tanpa kolom Nomor)
+    // DATASET 54 baris (tanpa kolom Nomor) – ubah di sini maka seluruh front-end ikut berubah
     const STATIC_DATASET = [
       {"Perguruan Tinggi":"Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung","Program Studi":"Pendidikan Islam Anak Usia Dini","Strata":"S1","Wilayah":"PTAN","No. SK":"804/SK/LAMDIK/Ak/S/XII/2022","Lembaga Akreditasi":"LAMDIK","Peringkat":"Unggul","Tanggal Kedaluwarsa":"2027-12-19","Status Kedaluwarsa":"Masih berlaku"},
       {"Perguruan Tinggi":"Universitas Islam Negeri Sayyid Ali Rahmatullah Tulungagung","Program Studi":"Manajemen Zakat Dan Wakaf","Strata":"S1","Wilayah":"PTAN","No. SK":"457/DE/A.5/AR.10/VI/2023","Lembaga Akreditasi":"LAMEMBA","Peringkat":"Baik Sekali","Tanggal Kedaluwarsa":"2028-06-12","Status Kedaluwarsa":"Masih berlaku"},
@@ -573,14 +573,14 @@
 
     let rawDataset = [];
     let filteredDataset = [];
-    let visibleRows = 10;
+    let visibleRows = 10;          // Awal tampil 10 baris
     let isAdminLoggedIn = false;
     let chartInstances = {};
     let networkGraphInstance = null;
 
     document.addEventListener("DOMContentLoaded", () => {
       initSlideshow();
-      // Generate Nomor otomatis dari index (1-based)
+      // Generate Nomor otomatis (1-based) + load 54 data
       rawDataset = STATIC_DATASET.map((d, i) => ({ ...d, Nomor: i + 1 }));
       filteredDataset = [...rawDataset];
       refreshDashboard();
@@ -610,7 +610,6 @@
       const tag1 = document.getElementById("slide1Tag").value;
       const title1 = document.getElementById("slide1Title").value;
       const img1 = document.getElementById("slide1Img").value;
-
       const tag2 = document.getElementById("slide2Tag").value;
       const title2 = document.getElementById("slide2Title").value;
       const img2 = document.getElementById("slide2Img").value;
@@ -618,7 +617,6 @@
       if(tag1) document.getElementById("displaySlide1Tag").innerText = tag1;
       if(title1) document.getElementById("displaySlide1Title").innerText = title1;
       if(img1) document.getElementById("slideBg1").style.backgroundImage = `linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('${img1}')`;
-
       if(tag2) document.getElementById("displaySlide2Tag").innerText = tag2;
       if(title2) document.getElementById("displaySlide2Title").innerText = title2;
       if(img2) document.getElementById("slideBg2").style.backgroundImage = `linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('${img2}')`;
@@ -628,7 +626,6 @@
       const newTitle = document.getElementById("editHeaderTitle").value;
       const newSub = document.getElementById("editHeaderSub").value;
       const newMarquee = document.getElementById("editMarqueeText").value;
-
       if(newTitle) document.getElementById("siteTitle").innerText = newTitle;
       if(newSub) document.getElementById("siteSub").innerText = newSub;
       if(newMarquee) document.getElementById("marqueeTextDisplay").innerText = newMarquee;
@@ -647,6 +644,7 @@
 
       const pctUnggul = totalProdi > 0 ? ((countUnggul / totalProdi) * 100).toFixed(1) : 0;
 
+      // Animasi 10.000 ms
       animateCounter("stat-total-prodi", totalProdi);
       animateCounter("stat-unggul", countUnggul);
       animateCounter("stat-baik-sekali", countBaikSekali);
@@ -657,7 +655,7 @@
       const el = document.getElementById(elementId);
       if (!el) return;
 
-      const duration = 1000;
+      const duration = 10000; // 10 detik
       const start = 0;
       const end = parseFloat(targetValue) || 0;
       const startTime = performance.now();
@@ -676,7 +674,6 @@
           el.innerText = isFloat ? end.toFixed(1) : end;
         }
       }
-
       requestAnimationFrame(updateNumber);
     }
 
@@ -723,7 +720,7 @@
     function renderCharts() {
       Object.keys(chartInstances).forEach(key => chartInstances[key].destroy());
 
-      // 1. Donut Chart
+      // 1. Donut
       const countPeringkat = { "Unggul": 0, "Baik Sekali": 0, "Baik": 0, "Lainnya": 0 };
       rawDataset.forEach(d => {
         const p = d["Peringkat"];
@@ -735,15 +732,12 @@
         type: 'doughnut',
         data: {
           labels: Object.keys(countPeringkat),
-          datasets: [{
-            data: Object.values(countPeringkat),
-            backgroundColor: ['#059669', '#3b82f6', '#f59e0b', '#94a3b8']
-          }]
+          datasets: [{ data: Object.values(countPeringkat), backgroundColor: ['#059669', '#3b82f6', '#f59e0b', '#94a3b8'] }]
         },
         options: { responsive: true, maintainAspectRatio: false }
       });
 
-      // 2. Stacked Bar Chart
+      // 2. Stacked Bar
       const strataList = ["S1", "S2", "S3", "Profesi"];
       const ranks = ["Unggul", "Baik Sekali", "Baik"];
       const matrixStrata = ranks.map(r => strataList.map(s => rawDataset.filter(d => d.Strata === s && d.Peringkat === r).length));
@@ -758,11 +752,7 @@
             { label: 'Baik', data: matrixStrata[2], backgroundColor: '#f59e0b' }
           ]
         },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: { x: { stacked: true }, y: { stacked: true } }
-        }
+        options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true } } }
       });
 
       // 3. Pie Lembaga
@@ -776,15 +766,12 @@
         type: 'pie',
         data: {
           labels: Object.keys(countLembaga),
-          datasets: [{
-            data: Object.values(countLembaga),
-            backgroundColor: ['#047857', '#d97706', '#2563eb', '#64748b']
-          }]
+          datasets: [{ data: Object.values(countLembaga), backgroundColor: ['#047857', '#d97706', '#2563eb', '#64748b'] }]
         },
         options: { responsive: true, maintainAspectRatio: false }
       });
 
-      // 4. Proyeksi Kedaluwarsa Combo
+      // 4. Proyeksi
       const yearsMap = {};
       rawDataset.forEach(d => {
         if (d["Tanggal Kedaluwarsa"] && d["Tanggal Kedaluwarsa"] !== "-") {
@@ -799,17 +786,12 @@
         type: 'bar',
         data: {
           labels: sortedYears,
-          datasets: [{
-            type: 'bar',
-            label: 'Jumlah Prodi Expired',
-            data: yearlyCounts,
-            backgroundColor: '#f59e0b'
-          }]
+          datasets: [{ type: 'bar', label: 'Jumlah Prodi Expired', data: yearlyCounts, backgroundColor: '#f59e0b' }]
         },
         options: { responsive: true, maintainAspectRatio: false }
       });
 
-      // 5. SCATTER PLOT
+      // 5. Scatter
       const today = new Date();
       const scatterData = [];
       const strataMap = { "S1": 1, "S2": 2, "S3": 3, "Profesi": 4 };
@@ -826,23 +808,12 @@
       chartInstances.scatterPlot = new Chart(document.getElementById('scatterPlotChart'), {
         type: 'scatter',
         data: {
-          datasets: [{
-            label: 'Sisa Bulan Kedaluwarsa',
-            data: scatterData,
-            backgroundColor: '#059669',
-            pointRadius: 6
-          }]
+          datasets: [{ label: 'Sisa Bulan Kedaluwarsa', data: scatterData, backgroundColor: '#059669', pointRadius: 6 }]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: {
-            tooltip: {
-              callbacks: {
-                label: (ctx) => `${ctx.raw.prodi}: ${ctx.raw.x} bulan sisa`
-              }
-            }
-          },
+          plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw.prodi}: ${ctx.raw.x} bulan sisa` } } },
           scales: {
             x: { title: { display: true, text: 'Sisa Kedaluwarsa (Bulan)' } },
             y: { 
@@ -933,7 +904,7 @@
         return matchSearch && matchLembaga && matchStatus;
       });
 
-      visibleRows = 10;
+      visibleRows = 10; // reset ke 10 baris
       renderTable();
     }
 
@@ -1064,13 +1035,12 @@
       document.getElementById("editPT").value = item["Perguruan Tinggi"] || "UIN Sayyid Ali Rahmatullah Tulungagung";
       document.getElementById("editProdi").value = item["Program Studi"] || "";
       document.getElementById("editStrata").value = item.Strata || "S1";
-      document.getElementById("editWilayah").value = item.Wilayah || "Fakultas Tarbiyah dan Ilmu Keguruan";
+      document.getElementById("editWilayah").value = item.Wilayah || "PTAN";
       document.getElementById("editNoSK").value = item["No. SK"] || "";
       document.getElementById("editLembaga").value = item["Lembaga Akreditasi"] || "BAN-PT";
       document.getElementById("editPeringkat").value = item.Peringkat || "Unggul";
       document.getElementById("editTanggal").value = item["Tanggal Kedaluwarsa"] || "";
       document.getElementById("editStatus").value = item["Status Kedaluwarsa"] || "Masih berlaku";
-
       document.getElementById("modalEdit").classList.remove("hidden");
     }
 
@@ -1080,13 +1050,12 @@
       document.getElementById("editPT").value = "UIN Sayyid Ali Rahmatullah Tulungagung";
       document.getElementById("editProdi").value = "";
       document.getElementById("editStrata").value = "S1";
-      document.getElementById("editWilayah").value = "Tulungagung";
+      document.getElementById("editWilayah").value = "PTAN";
       document.getElementById("editNoSK").value = "";
       document.getElementById("editLembaga").value = "BAN-PT";
       document.getElementById("editPeringkat").value = "Unggul";
       document.getElementById("editTanggal").value = "";
       document.getElementById("editStatus").value = "Masih berlaku";
-
       document.getElementById("modalEdit").classList.remove("hidden");
     }
 
@@ -1113,7 +1082,6 @@
         "Status Kedaluwarsa": document.getElementById("editStatus").value
       };
 
-      // Update lokal
       const idx = rawDataset.findIndex(d => d.Nomor === updatedData.Nomor);
       if (idx !== -1) {
         rawDataset[idx] = updatedData;
@@ -1171,7 +1139,6 @@
           pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
           heightLeft -= pageHeight;
         }
-
         pdf.save(`Laporan_SATU_AURA_${new Date().toISOString().slice(0,10)}.pdf`);
       });
     }
